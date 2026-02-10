@@ -279,17 +279,14 @@ nav .links a:hover {
    Screenshots
    ======================================== */
 .screenshots-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
     margin-top: 48px;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .screenshot-img {
-    width: 100%;
+    width: 140px;
     height: auto;
     border-radius: 12px;
     border: 1px solid var(--border);
@@ -456,8 +453,11 @@ footer .copyright {
         grid-template-columns: 1fr;
     }
 
+    .screenshot-img {
+        width: 100px;
+    }
+
     .screenshots-grid {
-        max-width: 320px;
         gap: 8px;
     }
 
