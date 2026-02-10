@@ -198,6 +198,8 @@ nav .links a:hover {
 
 .hero .app-mockup-img {
     width: 220px;
+    max-width: 100%;
+    height: auto;
     border-radius: 28px;
     border: 1px solid var(--border);
     margin: 0 auto 48px;
@@ -287,6 +289,7 @@ nav .links a:hover {
 
 .screenshot-img {
     width: 140px;
+    max-width: 30%;
     height: auto;
     border-radius: 12px;
     border: 1px solid var(--border);
