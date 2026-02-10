@@ -196,6 +196,15 @@ nav .links a:hover {
     text-transform: uppercase;
 }
 
+.hero .app-mockup-img {
+    width: 260px;
+    border-radius: 32px;
+    border: 1px solid var(--border);
+    margin: 0 auto 48px;
+    display: block;
+    box-shadow: 0 20px 60px rgba(255, 255, 255, 0.05);
+}
+
 .store-badge {
     display: inline-block;
     padding: 14px 32px;
@@ -276,18 +285,11 @@ nav .links a:hover {
     margin-top: 48px;
 }
 
-.screenshot-placeholder {
-    aspect-ratio: 9 / 19;
-    background: var(--card);
-    border: 1px solid var(--border);
+.screenshot-img {
+    width: 100%;
     border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--tertiary);
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+    border: 1px solid var(--border);
+    box-shadow: 0 12px 40px rgba(255, 255, 255, 0.03);
 }
 
 /* ========================================
@@ -440,6 +442,10 @@ footer .copyright {
     .hero .app-mockup {
         width: 200px;
         height: 400px;
+    }
+
+    .hero .app-mockup-img {
+        width: 200px;
     }
 
     .features-grid {
