@@ -197,8 +197,8 @@ nav .links a:hover {
 }
 
 .hero .app-mockup-img {
-    width: 260px;
-    border-radius: 32px;
+    width: 220px;
+    border-radius: 28px;
     border: 1px solid var(--border);
     margin: 0 auto 48px;
     display: block;
@@ -283,11 +283,15 @@ nav .links a:hover {
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     margin-top: 48px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .screenshot-img {
     width: 100%;
-    border-radius: 16px;
+    height: auto;
+    border-radius: 12px;
     border: 1px solid var(--border);
     box-shadow: 0 12px 40px rgba(255, 255, 255, 0.03);
 }
@@ -445,7 +449,7 @@ footer .copyright {
     }
 
     .hero .app-mockup-img {
-        width: 200px;
+        width: 180px;
     }
 
     .features-grid {
@@ -453,7 +457,7 @@ footer .copyright {
     }
 
     .screenshots-grid {
-        grid-template-columns: repeat(3, 1fr);
+        max-width: 320px;
         gap: 8px;
     }
 
