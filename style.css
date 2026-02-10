@@ -1,0 +1,465 @@
+/* ========================================
+   Madame Fortune - Website Styles
+   ======================================== */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #000000;
+    --surface: #0a0a0a;
+    --card: #111111;
+    --border: #1a1a1a;
+    --primary: #ffffff;
+    --secondary: rgba(255, 255, 255, 0.6);
+    --tertiary: rgba(255, 255, 255, 0.35);
+    --accent-glow: rgba(255, 255, 255, 0.08);
+    --font: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--primary);
+    font-family: var(--font);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+a:hover {
+    color: var(--primary);
+}
+
+/* ========================================
+   Starfield Background
+   ======================================== */
+.starfield {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.starfield .layer {
+    position: absolute;
+    width: 100%; height: 100%;
+    background-repeat: repeat;
+    background-size: 600px 600px;
+}
+
+.starfield .layer-1 {
+    background-image:
+        radial-gradient(1px 1px at 50px 120px, rgba(255,255,255,0.4), transparent),
+        radial-gradient(1px 1px at 180px 300px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 320px 80px, rgba(255,255,255,0.35), transparent),
+        radial-gradient(1px 1px at 450px 400px, rgba(255,255,255,0.25), transparent),
+        radial-gradient(1px 1px at 100px 500px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 540px 220px, rgba(255,255,255,0.2), transparent),
+        radial-gradient(1px 1px at 260px 550px, rgba(255,255,255,0.35), transparent),
+        radial-gradient(1px 1px at 400px 50px, rgba(255,255,255,0.3), transparent);
+    animation: drift 90s linear infinite;
+}
+
+.starfield .layer-2 {
+    background-image:
+        radial-gradient(1.5px 1.5px at 200px 200px, rgba(255,255,255,0.15), transparent),
+        radial-gradient(1.5px 1.5px at 400px 100px, rgba(255,255,255,0.12), transparent),
+        radial-gradient(1px 1px at 80px 350px, rgba(255,255,255,0.1), transparent),
+        radial-gradient(1px 1px at 500px 450px, rgba(255,255,255,0.15), transparent),
+        radial-gradient(1px 1px at 300px 550px, rgba(255,255,255,0.1), transparent);
+    animation: drift 150s linear infinite reverse;
+    opacity: 0.6;
+}
+
+@keyframes drift {
+    from { transform: translateY(0); }
+    to { transform: translateY(-600px); }
+}
+
+/* ========================================
+   Layout
+   ======================================== */
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* ========================================
+   Navigation
+   ======================================== */
+nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--primary);
+}
+
+nav .links {
+    display: flex;
+    gap: 24px;
+}
+
+nav .links a {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--tertiary);
+}
+nav .links a:hover {
+    color: var(--primary);
+}
+
+/* ========================================
+   Hero
+   ======================================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 200;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.hero .tagline {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--secondary);
+    letter-spacing: 2px;
+    margin-bottom: 48px;
+}
+
+.hero .app-mockup {
+    width: 260px;
+    height: 520px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 32px;
+    margin: 0 auto 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--tertiary);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.store-badge {
+    display: inline-block;
+    padding: 14px 32px;
+    border: 1px solid var(--secondary);
+    border-radius: 8px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--primary);
+    transition: all 0.3s;
+}
+.store-badge:hover {
+    background: var(--primary);
+    color: var(--bg);
+}
+
+/* ========================================
+   Features
+   ======================================== */
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 48px;
+}
+
+.feature-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+}
+
+.feature-card .icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+}
+
+.feature-card h3 {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: var(--secondary);
+    line-height: 1.6;
+}
+
+/* ========================================
+   Section Headers
+   ======================================== */
+.section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--tertiary);
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 200;
+    letter-spacing: 4px;
+}
+
+/* ========================================
+   Screenshots
+   ======================================== */
+.screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 48px;
+}
+
+.screenshot-placeholder {
+    aspect-ratio: 9 / 19;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--tertiary);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 20px;
+}
+
+footer .footer-links a {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--tertiary);
+}
+
+footer .copyright {
+    font-size: 12px;
+    color: var(--tertiary);
+}
+
+/* ========================================
+   Privacy & Support Pages
+   ======================================== */
+.page-header {
+    padding-top: 120px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 32px;
+    font-weight: 200;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
+
+.page-header .updated {
+    font-size: 12px;
+    color: var(--tertiary);
+    margin-top: 8px;
+    letter-spacing: 1px;
+}
+
+.page-content {
+    padding-bottom: 80px;
+}
+
+.page-content h2 {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 48px;
+    margin-bottom: 16px;
+    color: var(--primary);
+}
+
+.page-content h3 {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    color: var(--secondary);
+}
+
+.page-content p,
+.page-content li {
+    font-size: 14px;
+    color: var(--secondary);
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.page-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.page-content ul li::before {
+    content: "\2022";
+    color: var(--tertiary);
+    margin-right: 10px;
+}
+
+.page-content a {
+    color: var(--primary);
+    border-bottom: 1px solid var(--border);
+}
+.page-content a:hover {
+    border-color: var(--primary);
+}
+
+.page-content .contact-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 32px;
+    text-align: center;
+}
+
+.page-content .contact-box p {
+    margin-bottom: 8px;
+}
+
+/* FAQ */
+.faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 24px 0;
+}
+
+.faq-item:first-child {
+    border-top: 1px solid var(--border);
+}
+
+.faq-item h3 {
+    margin-top: 0;
+    color: var(--primary);
+    font-weight: 400;
+}
+
+.faq-item p {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+@media (max-width: 640px) {
+    .hero h1 {
+        font-size: 28px;
+        letter-spacing: 6px;
+    }
+
+    .hero .tagline {
+        font-size: 13px;
+    }
+
+    .hero .app-mockup {
+        width: 200px;
+        height: 400px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .screenshots-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    nav .links {
+        gap: 16px;
+    }
+
+    nav .links a {
+        font-size: 10px;
+    }
+
+    section {
+        padding: 48px 0;
+    }
+}
